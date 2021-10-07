@@ -12,4 +12,6 @@ jobs:
 
     steps:
       - name: Print the input name to STDOUT
-        run: echo The value from github.event.inputs.username is ${{ github.event.inputs.username }}
+        env: 
+          NAME: ${{ github.event.inputs.username }}
+        run: echo The value from github.event.inputs.username is $NAME
